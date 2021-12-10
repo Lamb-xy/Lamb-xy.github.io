@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Lamb&#39;s blog</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-12-07T08:51:39.769Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Lamb</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的第一篇博客文章</title>
+    <link href="http://example.com/2021/12/07/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
+    <id>http://example.com/2021/12/07/wo-de-di-yi-pian-bo-ke-wen-zhang/</id>
+    <published>2021-12-07T07:47:52.000Z</published>
+    <updated>2021-12-07T08:51:39.769Z</updated>
+    
+    
+    
+    
+    
+    <category term="学习" scheme="http://example.com/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="生活" scheme="http://example.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cjx猪猪</title>
+    <link href="http://example.com/2021/12/07/cjx-zhu-zhu/"/>
+    <id>http://example.com/2021/12/07/cjx-zhu-zhu/</id>
+    <published>2021-12-07T07:45:06.795Z</published>
+    <updated>2021-12-07T08:15:48.764Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
