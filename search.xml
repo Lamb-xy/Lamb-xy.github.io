@@ -4,19 +4,25 @@
   
     
     <entry>
-      <title>我的第一篇博客文章</title>
-      <link href="/2021/12/07/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
-      <url>/2021/12/07/wo-de-di-yi-pian-bo-ke-wen-zhang/</url>
+      <title>第一篇博客文章</title>
+      <link href="/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
+      <url>/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
       
         <tags>
             
-            <tag> 学习 </tag>
+            <tag> Hexo </tag>
             
-            <tag> 生活 </tag>
+            <tag> hexo-theme-bamboo </tag>
             
         </tags>
       
