@@ -322,11 +322,11 @@
                 <ul class="drawer-sub-menu" v-if="isOpen(6)">
                   
                   <li>
-                    <a href="/gallery">
+                    <a href="/link">
                       
-                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      <i class="fas fa-heart" style="margin-top: -20px;"></i>
                       
-                      <span>图库</span>
+                      <span>收藏链接</span>
                     </a>
                   </li>
                   
@@ -484,11 +484,11 @@
                 <ul class="sub-menu">
                   
                   <li>
-                    <a href="/gallery">
+                    <a href="/link">
                       
-                      <i class="fas fa-music" style="margin-top: -20px;"></i>
+                      <i class="fas fa-heart" style="margin-top: -20px;"></i>
                       
-                      <span>图库</span>
+                      <span>收藏链接</span>
                     </a>
                   </li>
                   
@@ -635,8 +635,8 @@
         <span class="post-detail-header_categories">
           <i class="iconfont iconbookmark1"></i> 分类：
           
-            <a href="/categories/%E5%89%8D%E7%AB%AF/" class="post-detail-header_category">
-              前端
+            <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-detail-header_category">
+              博客搭建
             </a>
           
         </span>
@@ -660,15 +660,51 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h2 class="bamboo-h" >
+博客网站搭建过程
+</h2>
+
+<hr>
+<h2 id="突发奇想"><a href="#突发奇想" class="headerlink" title="突发奇想"></a>突发奇想</h2><p>某天逛B战的时候看到了一个<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?share_source=copy_web">博客搭建</a>的教学视频,时长30分钟不到？？？于是也想自己动手试一试。(在此之前只会一点前端的知识)</p>
+<p>首先下载好Nodejs和Git(不了解)</p>
+<p>然后跟着视频在进行这些操作</p>
+<p>node -v    #查看node版本<br>npm -v    #查看npm版本<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>    #安装淘宝的cnpm 管理器<br>cnpm -v    #查看cnpm版本<br>cnpm install -g hexo-cli    #安装hexo框架<br>hexo -v    #查看hexo版本<br>mkdir blog    #创建blog目录<br>cd blog     #进入blog目录<br>sudo hexo init     #生成博客 初始化博客<br>hexo s    #启动本地博客服务<br><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>    #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章<br>#返回blog目录<br>hexo clean #清理<br>hexo g #生成<br>#Github创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件<br>#配置_config.yml </p>
+<hr>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+      type: git
+     repo: https://github.com/Lamb-xy/Lamb-xy.github.io.git
+      branch: master
+</code></pre>
+<hr>
+<p>hexo d    #部署到Github仓库里<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a>  #访问这个地址可以查看博客</p>
+<p> git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia  #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo c    #清理一下<br>hexo g    #生成<br>hexo d    #部署到远程Github仓库<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a>  #查看博客</p>
+<p>但是我没有用那个yilia主题,后面自己换成这个Bamboo主题啦,因为看起来更好看一点。<br>后面就是看主题配置文档自己配置博客了</p>
+<hr>
+<h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><p>看起来好像很简单的样子,但是我几乎每一步都有问题TAT,查了很多网上的资料,总结下来就是：</p>
+<ul>
+<li><p>完全不了解Git以及Nodejs,然后花了2小时学习了一下Git的基本命令</p>
+</li>
+<li><p>访问Github太慢</p>
+</li>
+<li><p>Nodejs版本太高,导致很多不必要的问题(现在忘了有哪些问题了),后面我用v12.14.1</p>
+</li>
+<li><p>修改主题配置文件时不小心就会出错,然而自己几乎看不懂运行原理</p>
+</li>
+</ul>
+<hr>
+<h2 id="一些想法总结"><a href="#一些想法总结" class="headerlink" title="一些想法总结"></a>一些想法总结</h2><p>总之现在就是连滚带爬把这个博客框架给弄好了(应该吧),前前后后用了4天左右。总之,遇到不懂的就去搜,看看别人怎么做的,方法总比困难多嘛,说不定看着看着就会了哈哈哈</p>
+<blockquote>
+<p>注: 以上是一个不会码字不会写代码的小白的第一篇博客,下一次见~</p>
+</blockquote>
+
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
-          
-            <a href="/tags/Hexo/" class="">
-              Hexo
-            </a>
           
             <a href="/tags/hexo-theme-bamboo/" class="">
               hexo-theme-bamboo
@@ -735,7 +771,7 @@
       </div>
       <div class="donate-box_title">
         <h4>
-          你的赏识是我前进的动力
+          把这个删了运行不了所以留在这里了
         </h4>
       </div>
       <div class="donate-box_tab">
