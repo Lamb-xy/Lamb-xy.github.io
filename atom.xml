@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-11T13:36:44.181Z</updated>
+  <updated>2021-12-11T15:09:25.164Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>六级渡劫</title>
+    <link href="http://example.com/2021/12/11/liu-ji-du-jie/"/>
+    <id>http://example.com/2021/12/11/liu-ji-du-jie/</id>
+    <published>2021-12-11T13:59:00.000Z</published>
+    <updated>2021-12-11T15:09:25.164Z</updated>
+    
+    
+    <summary type="html">英语听力？笑死,完全听不懂</summary>
+    
+    
+    
+    <category term="考证过级" scheme="http://example.com/categories/%E8%80%83%E8%AF%81%E8%BF%87%E7%BA%A7/"/>
+    
+    
+    <category term="英语六级" scheme="http://example.com/tags/%E8%8B%B1%E8%AF%AD%E5%85%AD%E7%BA%A7/"/>
+    
+    <category term="捐款" scheme="http://example.com/tags/%E6%8D%90%E6%AC%BE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一篇博客文章</title>
     <link href="http://example.com/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
     <id>http://example.com/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/</id>
     <published>2021-12-11T04:49:00.000Z</published>
-    <updated>2021-12-11T13:36:44.181Z</updated>
+    <updated>2021-12-11T15:11:25.139Z</updated>
     
     
     <summary type="html">博客搭建过程</summary>
