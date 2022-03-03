@@ -678,7 +678,7 @@
 <li>注意换题信号以及语气的暗示作用</li>
 </ul>
 </blockquote>
-<h3 id="长对话题型："><a href="#长对话题型：" class="headerlink" title="长对话题型："></a>长对话题型：</h3><p>技巧：</p>
+<h3 id="长对话题型"><a href="#长对话题型" class="headerlink" title="长对话题型"></a>长对话题型</h3><p>技巧：</p>
 <blockquote>
 <ul>
 <li>男女士转换，注意听谁的回答</li>
@@ -686,7 +686,7 @@
 <li>开头以及结尾</li>
 </ul>
 </blockquote>
-<h3 id="听力篇章："><a href="#听力篇章：" class="headerlink" title="听力篇章："></a>听力篇章：</h3><p>技巧：</p>
+<h3 id="听力篇章"><a href="#听力篇章" class="headerlink" title="听力篇章"></a>听力篇章</h3><p>技巧：</p>
 <blockquote>
 <ul>
 <li>前三句重点</li>
@@ -695,7 +695,7 @@
 <li>不确定听题目</li>
 </ul>
 </blockquote>
-<h3 id="讲座："><a href="#讲座：" class="headerlink" title="讲座："></a>讲座：</h3><p>技巧：</p>
+<h3 id="讲座"><a href="#讲座" class="headerlink" title="讲座"></a>讲座</h3><p>技巧：</p>
 <blockquote>
 <ul>
 <li>to me，what…is…</li>
@@ -748,6 +748,26 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/post3.jpg" class="lazyload placeholder" data-srcset="/medias/post3.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
+    </div>
+    <a href="/2021/12/30/babel-zhuan-ma-qi/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">Babel转码器</div>
+      </div>
+      
+      <!-- <div class="content">
+        -
+Babel 转码器
+Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在老版
+      </div> -->
+    </a>
+  </div>
+
 
 
   
@@ -767,7 +787,7 @@
 
 
 
-突发奇想某天逛B战的时候看到了一个博客搭建的教学视频,时长30分钟不到？？？于是也想自己动手试
+突发奇想某天逛 B 战的时候看到了一个博客搭建的教学视频,时长 30 分钟不到？？？于是也想自
       </div> -->
     </a>
   </div>
@@ -777,89 +797,6 @@
     
     
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          把这个删了运行不了所以留在这里了
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/medias/zfb.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" class="lazyload placeholder" data-srcset="/medias/wx.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
      
 
     <!-- 分享 -->

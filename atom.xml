@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-11T15:09:25.164Z</updated>
+  <updated>2022-03-03T14:25:16.587Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,61 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="http://example.com/2022/03/03/less-xue-xi-bi-ji/"/>
+    <id>http://example.com/2022/03/03/less-xue-xi-bi-ji/</id>
+    <published>2022-03-03T14:27:55.853Z</published>
+    <updated>2022-03-03T14:25:16.587Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Less学习&quot;&gt;&lt;a href=&quot;#Less学习&quot; class=&quot;headerlink&quot; title=&quot;Less学习&quot;&gt;&lt;/a&gt;Less学习&lt;/h1&gt;&lt;h2 id=&quot;引入Less&quot;&gt;&lt;a href=&quot;#引入Less&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Babel转码器</title>
+    <link href="http://example.com/2021/12/30/babel-zhuan-ma-qi/"/>
+    <id>http://example.com/2021/12/30/babel-zhuan-ma-qi/</id>
+    <published>2021-12-30T10:34:00.000Z</published>
+    <updated>2021-12-30T10:37:21.190Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;-&lt;/p&gt;
+&lt;h1 id=&quot;Babel-转码器&quot;&gt;&lt;a href=&quot;#Babel-转码器&quot; class=&quot;headerlink&quot; title=&quot;Babel 转码器&quot;&gt;&lt;/a&gt;Babel 转码器&lt;/h1&gt;&lt;hr&gt;
+&lt;p&gt;Babel 是一个广泛使用的 ES6 转码器，可以将</summary>
+        
+      
+    
+    
+    
+    <category term="ES6学习" scheme="http://example.com/categories/ES6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="ES6学习" scheme="http://example.com/tags/ES6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Babel转码器" scheme="http://example.com/tags/Babel%E8%BD%AC%E7%A0%81%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>六级渡劫</title>
     <link href="http://example.com/2021/12/11/liu-ji-du-jie/"/>
     <id>http://example.com/2021/12/11/liu-ji-du-jie/</id>
     <published>2021-12-11T13:59:00.000Z</published>
-    <updated>2021-12-11T15:09:25.164Z</updated>
+    <updated>2021-12-30T10:32:48.236Z</updated>
     
     
     <summary type="html">英语听力？笑死,完全听不懂</summary>
@@ -42,7 +92,7 @@
     <link href="http://example.com/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
     <id>http://example.com/2021/12/11/wo-de-di-yi-pian-bo-ke-wen-zhang/</id>
     <published>2021-12-11T04:49:00.000Z</published>
-    <updated>2021-12-11T15:11:25.139Z</updated>
+    <updated>2021-12-30T11:54:20.691Z</updated>
     
     
     <summary type="html">博客搭建过程</summary>

@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>关于 | Lamb&#39;s blog</title>
+  <title>Babel转码器 | Lamb&#39;s blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -585,197 +585,635 @@
 </header>
         <!-- 内容区域 -->
         
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-about" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+ <!-- prismjs 代码高亮 -->
+ 
+    
+    <link href="/js/prism/prism-line-numbers.css" rel="stylesheet">
+    
+        <link href="/js/prism/prism.min.css" rel="stylesheet">
+    
 
-<div class="about-header" style="background-image:url('/medias/about.png')">
-	<div class="about-header-title">
-		about
-	</div>
-	<div class="about-header-desc">
-	
-	<span class="title" id="about-header-desc"></span>
-	<script>
-  function typedFn() {
-    const el = '#about-header-desc';
-    const type = 'about';
-    let desc = '生活可以五颜六色 但是不要乱七八糟'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
+  
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('/medias/post3.jpg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        Babel转码器
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2021-12-30 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/ES6%E5%AD%A6%E4%B9%A0/" class="post-detail-header_category">
+              ES6学习
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+    <script src="/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="row justify-position" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>-</p>
+<h1 id="Babel-转码器"><a href="#Babel-转码器" class="headerlink" title="Babel 转码器"></a>Babel 转码器</h1><hr>
+<p>Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在老版本的浏览器执行。</p>
+<blockquote>
+<p>下面的原始代码用了箭头函数，Babel 将其转为普通函数，就能在不支持箭头函数的 JavaScript 环境执行了。</p>
+</blockquote>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">
+// 转码前
+input.map(item => item + 1);
+// 转码后
+input.map(function (item) &#123;
+  return item + 1;
+&#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>下面的命令在项目目录中，安装 Babel。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install --save-dev @babel/core<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="配置文件-babelrc"><a href="#配置文件-babelrc" class="headerlink" title="配置文件.babelrc"></a>配置文件.babelrc</h2><p>Babel 的配置文件是.babelrc，存放在项目的根目录下。使用 Babel 的第一步，就是配置这个文件。<br>该文件用来设置转码规则和插件，基本格式如下。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&#123;
+  "presets": [],
+  "plugins": []
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>presets 字段设定转码规则，官方提供以下的规则集，你可以根据需要安装。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># 最新转码规则
+$ npm install --save-dev @babel/preset-env
+# react 转码规则
+$ npm install --save-dev @babel/preset-react<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>然后，将这些规则加入.babelrc。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&#123;
+  "presets": [
+    "@babel/env",
+    "@babel/preset-react"
+  ],
+  "plugins": []
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意，以下所有 Babel 工具和模块的使用，都必须先写好.babelrc。</p>
+<h2 id="命令行转码"><a href="#命令行转码" class="headerlink" title="命令行转码"></a>命令行转码</h2><p>Babel 提供命令行工具@babel/cli，用于命令行转码。<br>它的安装命令如下。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install --save-dev @babel/cli<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>基本语法如下</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># 转码结果输出到标准输出
+$ npx babel example.js
+# 转码结果写入一个文件
+# --out-file 或 -o 参数指定输出文件
+$ npx babel example.js --out-file compiled.js
+# 或者
+$ npx babel example.js -o compiled.js
+# 整个目录转码
+# --out-dir 或 -d 参数指定输出目录
+$ npx babel src --out-dir lib
+# 或者
+$ npx babel src -d lib
+# -s 参数生成source map文件
+$ npx babel src -d lib -s<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="babel-node"><a href="#babel-node" class="headerlink" title="babel-node"></a>babel-node</h2><p>@babel/node 模块的 babel-node 命令，提供一个支持 ES6 的 REPL 环境。它支持 Node 的 REPL 环境的所有功能，而且可以直接运行 ES6 代码。<br>首先，安装这个模块。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install --save-dev @babel/node
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后，执行 babel-node 就进入 REPL 环境。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">$ npx babel-node
+> (x => x * 2)(1)
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>babel-node 命令可以直接运行 ES6 脚本。将上面的代码放入脚本文件 es6.js，然后直接运行。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text"># es6.js 的代码
+# console.log((x => x * 2)(1));
+$ npx babel-node es6.js
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="babel-register-模块"><a href="#babel-register-模块" class="headerlink" title="@babel/register 模块"></a>@babel/register 模块</h2><p>@babel/register 模块改写 require 命令，为它加上一个钩子。此后，每当使用 require 加载.js、.jsx、.es 和.es6 后缀名的文件，就会先用 Babel 进行转码。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install --save-dev @babel/register<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用时，必须首先加载@babel/register。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">// index.js
+require('@babel/register');
+require('./es6.js');<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>然后，就不需要手动对 index.js 转码了。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">$ node index.js
+2<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>需要注意的是，@babel/register 只会对 require 命令加载的文件转码，而不会对当前文件转码。另外，由于它是实时转码，所以只适合在开发环境使用。</p>
+</blockquote>
+<h2 id="polyfill"><a href="#polyfill" class="headerlink" title="polyfill"></a>polyfill</h2><p>Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如 Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign）都不会转码。</p>
+<p>举例来说，ES6 在 Array 对象上新增了 Array.from 方法。<br>Babel 就不会转码这个方法。如果想让这个方法运行，可以使用 core-js 和 regenerator-runtime(后者提供 generator 函数的转码)，为当前环境提供一个垫片。</p>
+<p>安装命令如下。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">npm install --save-dev core-js regenerator-runtime<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>然后，在脚本头部，加入如下两行代码。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">import 'core-js';
+import 'regenerator-runtime/runtime';
+// 或者
+require('core-js');
+require('regenerator-runtime/runtime);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Babel 默认不转码的 API 非常多，详细清单可以查看 babel-plugin-transform-runtime 模块的 definitions.js 文件。</p>
+<h2 id="浏览器环境"><a href="#浏览器环境" class="headerlink" title="浏览器环境"></a>浏览器环境</h2><p>Babel 也可以用于浏览器环境，使用@babel/standalone 模块提供的浏览器版本，将其插入网页。</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;script src="https://unpkg.com/@babel/standalone/babel.min.js">&lt;/script>
+&lt;script type="text/babel">
+// Your ES6 code
+&lt;/script><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>注意，网页实时将 ES6 代码转为 ES5，对性能会有影响。生产环境需要加载已经转码完成的脚本。</p>
+<p>Babel 提供一个 REPL 在线编译器，可以在线将 ES6 代码转为 ES5 代码。转换后的代码，可以直接作为 ES5 代码插入网页运行。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/ES6%E5%AD%A6%E4%B9%A0/" class="">
+              ES6学习
+            </a>
+          
+            <a href="/tags/Babel%E8%BD%AC%E7%A0%81%E5%99%A8/" class="">
+              Babel转码器
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>Lamb</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2021/12/30/babel-zhuan-ma-qi/" target="_blank" title="Babel转码器">http://example.com/2021/12/30/babel-zhuan-ma-qi/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/1.jpg" class="lazyload placeholder" data-srcset="/medias/1.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
+    </div>
+    <a href="/2022/03/03/less-xue-xi-bi-ji/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text"></div>
+      </div>
+      
+      <!-- <div class="content">
+        Less学习引入Less1.在官网下载或者使用CDN
+&lt;script src="//cdnjs.cloudflar
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="/medias/post2.jpg" class="lazyload placeholder" data-srcset="/medias/post2.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" src="" alt="">
+    </div>
+    <a href="/2021/12/11/liu-ji-du-jie/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">六级渡劫</div>
+      </div>
+      <!-- <div class="content">
+        
+剩余六级考试还有一个星期,跟着六级听力讲解视频做了点笔记
+
+
+一些学习笔记
+
+
+教学视频【合集】【六级听力】三小时带你
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+    <!-- 打赏 -->
+     
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script src="/js/shareJs/social-share.min.js"></script>
 </script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
+	<div id="vcomment" class="comment"></div>
+</section>
+<style>
+	#comments {
+		background: rgba(255,255,255,0.9);
+	}
+	#veditor {
+		background-image: url('/');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+		background-color: rgba(255, 255, 255, 0);
+		resize: vertical;
+	}
+	#veditor:focus{
+		background-position-y: 200px;
+		transition: all 0.2s ease-in-out 0s;
+	}
+	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: #42b983;
+	}
+	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
+		color: #42b983;
+		border-color: #42b983;
+	}
+	#vcomment .vcards .vcard .vhead .vsys i {
+		display: none;
+	}
+	/* 底部valine链接 */
+	#vcomment .vpower {
+		display: none;
+	}
 	
-	</div>
-	<div class="mask-box"></div>
+	/* 底下注释是修改 名称和邮箱和网址输入框的样式 */
+	/* #vcomment .vheader {
+		display: flex;
+		justify-content: space-around;
+	}
+	
+	#vcomment .vheader .vnick {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vmail {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	}
+
+	#vcomment .vheader .vlink {
+		width: 31%;
+		border: 2px solid #dedede;
+		padding-left: 10px;
+		padding-right: 10px;
+		border-radius: 5px
+	} */
+
+	img.vimg {
+		transition: all 1s;
+		/* 头像旋转时间为 1s */
+	}
+
+	img.vimg:hover {
+		transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		-o-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+	}
+
+	#vcomment .vcards .vcard {
+		padding: 15px 20px 0 20px;
+		border-radius: 10px;
+		margin-bottom: 15px;
+		box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
+		transition: all .3s
+	}
+
+	#vcomment .vcards .vcard:hover {
+		box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12)
+	}
+
+	#vcomment .vcards .vcard .vh .vcard {
+		border: none;
+		box-shadow: none;
+	}
+</style>
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <!-- 文章详情页右侧目录 -->
+
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fas fa-list-ul" aria-hidden="true"></i><span>本文目录</span>
+        
+          <div class="toc-open-close">本文目录</div>
+        
+      </div>
+      <div class="toc-content">
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 手机端目录按钮 -->
+  <div id="toc-mobile-btn">
+    <i class="fas fa-list-ul" aria-hidden="true"></i>
+  </div>
+
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('' || 'false');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = true;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
 </div>
 
-
-<div id="about" class="container">
-	<div class="title">
-		<i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;关于
-	</div>
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;基本信息
-		</div>
-		<div class="items">
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-heart" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					年龄：20
-				</div>
-			</div>
-
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-transgender" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					性别：女
-				</div>
-			</div>
-
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-map-marker" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					坐标：地球
-				</div>
-			</div>
-
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-external-link-square" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					状态：摸鱼中
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;技能
-		</div>
-		<div class="skill">
-			
-			<div class="bar-box">
-				<span class="bar-name">干饭</span>
-				<div class="bar" style="background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); width: 100%"></div>
-				<span class="bar-number">100%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">HTML5</span>
-				<div class="bar" style="background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); width: 20%"></div>
-				<span class="bar-number">20%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">Node.js</span>
-				<div class="bar" style="background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); width: 5%"></div>
-				<span class="bar-number">5%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">CSS</span>
-				<div class="bar" style="background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); width: 10%"></div>
-				<span class="bar-number">10%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">JavaScript</span>
-				<div class="bar" style="background: linear-gradient(to top, #0ba360 0%, #3cba92 100%); width: 10%"></div>
-				<span class="bar-number">10%</span>
-			</div>
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;社交账号
-		</div>
-		<div class="socialAccounts">
-			
-				<div class="account">
-					<i class="fas fa-qq" aria-hidden="true"></i> QQ：<a href="tencent://message/?uin=1462676302&Site=&Menu=yes">1462676302</a> 
-				</div>
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;游戏
-		</div>
-		<div class="games">
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-book" aria-hidden="true"></i>&nbsp;&nbsp;书籍
-		</div>
-		<div class="books">
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.O1a09AQrH86bVcbKAf8V1gHaHa?w=211&h=211&c=7&r=0&o=5&dpr=1.65&pid=1.7" class="lazyload placeholder" data-srcset="https://tse2-mm.cn.bing.net/th/id/OIP-C.O1a09AQrH86bVcbKAf8V1gHaHa?w=211&h=211&c=7&r=0&o=5&dpr=1.65&pid=1.7" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						被讨厌的勇气
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="http://t14.baidu.com/it/u=1490373061,2036287326&fm=224&app=112&f=JPEG?w=427&h=500&s=882A5D325917664D50C151DA000010B2" class="lazyload placeholder" data-srcset="http://t14.baidu.com/it/u=1490373061,2036287326&fm=224&app=112&f=JPEG?w=427&h=500&s=882A5D325917664D50C151DA000010B2" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						当呼吸化为空气
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Faa86f43faf58e97e225878807bcdf01ae78b18b586f1-XNAiMs_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641886972&t=e7407adda6728880b121f140097ecc4b" class="lazyload placeholder" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Faa86f43faf58e97e225878807bcdf01ae78b18b586f1-XNAiMs_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641886972&t=e7407adda6728880b121f140097ecc4b" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						偷影子的人
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2018%2F11%2F15%2FFhXoOX-mxj8U5nQz5hAitXt6QJU0.png%3FimageView2%2F2%2Fw%2F580%2Fh%2F580%2Fq%2F75%2Fformat%2Fpng&refer=http%3A%2F%2Fimg.yzcdn.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641887075&t=3146aa0903f3bda4ea8366b1b70786ef" class="lazyload placeholder" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2018%2F11%2F15%2FFhXoOX-mxj8U5nQz5hAitXt6QJU0.png%3FimageView2%2F2%2Fw%2F580%2Fh%2F580%2Fq%2F75%2Fformat%2Fpng&refer=http%3A%2F%2Fimg.yzcdn.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641887075&t=3146aa0903f3bda4ea8366b1b70786ef" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						沟通的艺术
-					</div>
-				</div>
-			
-		</div>
-	</div>
-	
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
 </div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '/medias/bg.jpg';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
       </main>
     </div>
 

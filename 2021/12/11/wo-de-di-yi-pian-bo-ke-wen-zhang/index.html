@@ -665,38 +665,38 @@
 </h2>
 
 <hr>
-<h2 id="突发奇想"><a href="#突发奇想" class="headerlink" title="突发奇想"></a>突发奇想</h2><p>某天逛B战的时候看到了一个<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?share_source=copy_web">博客搭建</a>的教学视频,时长30分钟不到？？？于是也想自己动手试一试。(在此之前只会一点前端的知识)</p>
-<p>首先下载好Nodejs和Git(不了解)</p>
+<h2 id="突发奇想"><a href="#突发奇想" class="headerlink" title="突发奇想"></a>突发奇想</h2><p>某天逛 B 战的时候看到了一个<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty?share_source=copy_web">博客搭建</a>的教学视频,时长 30 分钟不到？？？于是也想自己动手试一试。(在此之前只会一点前端的知识)</p>
+<p>首先下载好 Nodejs 和 Git(不了解)</p>
 <p>然后跟着视频在进行这些操作</p>
-<p>node -v    #查看node版本<br>npm -v    #查看npm版本<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a>    #安装淘宝的cnpm 管理器<br>cnpm -v    #查看cnpm版本<br>cnpm install -g hexo-cli    #安装hexo框架<br>hexo -v    #查看hexo版本<br>mkdir blog    #创建blog目录<br>cd blog     #进入blog目录<br>sudo hexo init     #生成博客 初始化博客<br>hexo s    #启动本地博客服务<br><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>    #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章<br>#返回blog目录<br>hexo clean #清理<br>hexo g #生成<br>#Github创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在blog目录下安装git部署插件<br>#配置_config.yml </p>
+<p>node -v #查看 node 版本<br>npm -v #查看 npm 版本<br>npm install -g cnpm –registry=<a target="_blank" rel="noopener" href="http://registry.npm.taobao.org/">http://registry.npm.taobao.org</a> #安装淘宝的 cnpm 管理器<br>cnpm -v #查看 cnpm 版本<br>cnpm install -g hexo-cli #安装 hexo 框架<br>hexo -v #查看 hexo 版本<br>mkdir blog #创建 blog 目录<br>cd blog #进入 blog 目录<br>sudo hexo init #生成博客 初始化博客<br>hexo s #启动本地博客服务<br><a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> #本地访问地址<br>hexo n “我的第一篇文章” #创建新的文章 #返回 blog 目录<br>hexo clean #清理<br>hexo g #生成<br>#Github 创建一个新的仓库 YourGithubName.github.io<br>cnpm install –save hexo-deployer-git #在 blog 目录下安装 git 部署插件 #配置_config.yml</p>
+<pre class="line-numbers language-yml" data-language="yml"><code class="language-yml">
+    # Deployment
+    ## Docs: https:&#x2F;&#x2F;hexo.io&#x2F;docs&#x2F;deployment.html
+    deploy:
+
+type: git
+repo: https:&#x2F;&#x2F;github.com&#x2F;Lamb-xy&#x2F;Lamb-xy.github.io.git
+branch: master
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>hexo d #部署到 Github 仓库里<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a> #访问这个地址可以查看博客</p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载 yilia 主题到本地</p>
+<h1 id="修改hexo根目录下的-config-yml-文件-theme-yilia"><a href="#修改hexo根目录下的-config-yml-文件-theme-yilia" class="headerlink" title="修改hexo根目录下的_config.yml 文件:theme: yilia"></a>修改hexo根目录下的_config.yml 文件:theme: yilia</h1><p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程 Github 仓库<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a> #查看博客</p>
+<p>但是我没有用那个 yilia 主题,后面自己换成这个 Bamboo 主题啦,因为看起来更好看一点。<br>后面就是看主题配置文档自己配置博客了</p>
 <hr>
-<pre><code># Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-      type: git
-     repo: https://github.com/Lamb-xy/Lamb-xy.github.io.git
-      branch: master
-</code></pre>
-<hr>
-<p>hexo d    #部署到Github仓库里<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a>  #访问这个地址可以查看博客</p>
-<p> git clone <a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia.git">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia  #下载yilia主题到本地</p>
-<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<p>hexo c    #清理一下<br>hexo g    #生成<br>hexo d    #部署到远程Github仓库<br><a target="_blank" rel="noopener" href="https://lamb-xy.github.io/">https://Lamb-xy.github.io/</a>  #查看博客</p>
-<p>但是我没有用那个yilia主题,后面自己换成这个Bamboo主题啦,因为看起来更好看一点。<br>后面就是看主题配置文档自己配置博客了</p>
-<hr>
-<h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><p>看起来好像很简单的样子,但是我几乎每一步都有问题TAT,查了很多网上的资料,总结下来就是：</p>
+<h2 id="遇到的困难"><a href="#遇到的困难" class="headerlink" title="遇到的困难"></a>遇到的困难</h2><p>看起来好像很简单的样子,但是我几乎每一步都有问题 TAT,查了很多网上的资料,总结下来就是：</p>
 <ul>
-<li><p>完全不了解Git以及Nodejs,然后花了2小时学习了一下Git的基本命令</p>
+<li><p>  完全不了解 Git 以及 Nodejs,然后花了 2 小时学习了一下 Git 的基本命令</p>
 </li>
-<li><p>访问Github太慢</p>
+<li><p>  访问 Github 太慢</p>
 </li>
-<li><p>Nodejs版本太高,导致很多不必要的问题(现在忘了有哪些问题了),后面我用v12.14.1</p>
+<li><p>  Nodejs 版本太高,导致很多不必要的问题(现在忘了有哪些问题了),后面我用 v12.14.1</p>
 </li>
-<li><p>修改主题配置文件时不小心就会出错,然而自己几乎看不懂运行原理</p>
+<li><p>  修改主题配置文件时不小心就会出错,然而自己几乎看不懂运行原理</p>
 </li>
 </ul>
 <hr>
-<h2 id="一些想法总结"><a href="#一些想法总结" class="headerlink" title="一些想法总结"></a>一些想法总结</h2><p>总之现在就是连滚带爬把这个博客框架给弄好了(应该吧),前前后后用了4天左右。总之,遇到不懂的就去搜,看看别人怎么做的,方法总比困难多嘛,说不定看着看着就会了哈哈哈</p>
+<h2 id="一些想法总结"><a href="#一些想法总结" class="headerlink" title="一些想法总结"></a>一些想法总结</h2><p>总之现在就是连滚带爬把这个博客框架给弄好了(应该吧),前前后后用了 4 天左右。总之,遇到不懂的就去搜,看看别人怎么做的,方法总比困难多嘛,说不定看着看着就会了哈哈哈</p>
 <blockquote>
 <p>注: 以上是一个不会码字不会写代码的小白的第一篇博客,下一次见~</p>
 </blockquote>
@@ -775,89 +775,6 @@ deploy:
     
     
     <!-- 打赏 -->
-    
-      <div id="appDonate" class="post-donate">
-  <div id="donate_board" class="donate_bar center" ref="donate">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
-  </div>
-  <transition name="fade">
-    <div 
-      class="donate-box-mask"
-      v-cloak 
-      v-show="visible"
-      @click="cancelDialogDrawer()"
-    >
-    </div>
-  </transition>
-  <transition name="bounce">
-    <div class="donate-box" v-cloak v-show="visible">
-      <div class="donate-box_close">
-        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
-      </div>
-      <div class="donate-box_title">
-        <h4>
-          把这个删了运行不了所以留在这里了
-        </h4>
-      </div>
-      <div class="donate-box_tab">
-        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
-          支付宝
-        </div>
-        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
-          微信
-        </div>
-      </div>
-      <div class="donate-box_img">
-        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
-          <img src="/medias/zfb.jpg" class="lazyload placeholder" data-srcset="/medias/zfb.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="支付宝打赏" />
-        </div> 
-        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
-          <img src="/medias/wx.jpg" class="lazyload placeholder" data-srcset="/medias/wx.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="微信打赏" />
-        </div>
-      </div>
-    </div>
-  </transition>
-</div>
-
-<script>
-  var body = document.body || document.documentElement || window;
-  var vm = new Vue({
-    el: '#appDonate',
-    data: {
-      visible: false,
-      tabActive: 'Alipay',
-      top: 0,
-    },
-    computed: {
-    },
-    mounted() {
-    },
-    methods: {
-      showDialogDrawer() {
-        this.visible = true;
-        // 防止页面滚动，只能让弹框滚动
-        // function getScroll() {
-        //   return {
-        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
-        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        //   };
-        // }
-        this.top = $(document).scrollTop() // or getScroll().top
-        // console.log('aa', $('.main-content'));
-        body.style.cssText = 'overflow: hidden;';
-      },
-      cancelDialogDrawer() {
-        this.visible = false;
-        body.removeAttribute('style');
-        $(document).scrollTop(this.top)
-      },
-      changeTabActive(name) {
-        this.tabActive = name;
-      }
-    },
-    created() {}
-  })
-</script>
      
 
     <!-- 分享 -->

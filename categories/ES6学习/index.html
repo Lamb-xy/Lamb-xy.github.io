@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>关于 | Lamb&#39;s blog</title>
+  <title>分类: ES6学习 | Lamb&#39;s blog</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -585,20 +585,21 @@
 </header>
         <!-- 内容区域 -->
         
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-about" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
 
-<div class="about-header" style="background-image:url('/medias/about.png')">
-	<div class="about-header-title">
-		about
-	</div>
-	<div class="about-header-desc">
-	
-	<span class="title" id="about-header-desc"></span>
-	<script>
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
+<div class="bg-light-floor-categoryDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+
+<div class="category-header"  style="background-image:url('https://c.wallhere.com/photos/6a/1c/Lifeline_clouds_sky_cats_birds_window-1944483.jpg!d')">
+  <div class="category-header-title">
+    category
+  </div>
+  <div class="category-header-desc">
+    
+      <span class="title" id="category-header-desc"></span>
+      <script>
   function typedFn() {
-    const el = '#about-header-desc';
-    const type = 'about';
+    const el = '#category-header-desc';
+    const type = 'categoryDetail';
     let desc = '生活可以五颜六色 但是不要乱七八糟'
     var typed = new Typed(el, {
       strings: [desc],
@@ -611,171 +612,85 @@
   }
   typedFn();
 </script>
-	
-	</div>
-	<div class="mask-box"></div>
+      
+  </div>
+  <div class="mask-box"></div>
 </div>
 
 
-<div id="about" class="container">
-	<div class="title">
-		<i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;关于
-	</div>
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;基本信息
-		</div>
-		<div class="items">
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-heart" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					年龄：20
-				</div>
-			</div>
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: #F9E79F;">ES6学习 分类</div>
+  </div>
+  <!-- 每一篇文章卡片 -->
+  <!-- hash算法 -->
 
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-transgender" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					性别：女
-				</div>
-			</div>
+<section class="posts">
+  
+    
+    <article class="post reveal" style="flex-direction: row-reverse;   ">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time">2021-12-30</span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="/2021/12/30/babel-zhuan-ma-qi/">Babel转码器</a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <!-- 文章详情页的标签 -->
 
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-map-marker" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					坐标：地球
-				</div>
-			</div>
+    <i class="iconfont icontag"></i>
+    <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Babel%E8%BD%AC%E7%A0%81%E5%99%A8/" rel="tag">Babel转码器</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6%E5%AD%A6%E4%B9%A0/" rel="tag">ES6学习</a></li></ul>
 
-			<div class="item">
-				<div class="border">
-					<i class="fas fa-external-link-square" aria-hidden="true"></i>
-				</div>
-				<div class="text">
-					状态：摸鱼中
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;技能
-		</div>
-		<div class="skill">
-			
-			<div class="bar-box">
-				<span class="bar-name">干饭</span>
-				<div class="bar" style="background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%); width: 100%"></div>
-				<span class="bar-number">100%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">HTML5</span>
-				<div class="bar" style="background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%); width: 20%"></div>
-				<span class="bar-number">20%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">Node.js</span>
-				<div class="bar" style="background: linear-gradient(to right, #43e97b 0%, #38f9d7 100%); width: 5%"></div>
-				<span class="bar-number">5%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">CSS</span>
-				<div class="bar" style="background: linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%); width: 10%"></div>
-				<span class="bar-number">10%</span>
-			</div>
-			
-			<div class="bar-box">
-				<span class="bar-name">JavaScript</span>
-				<div class="bar" style="background: linear-gradient(to top, #0ba360 0%, #3cba92 100%); width: 10%"></div>
-				<span class="bar-number">10%</span>
-			</div>
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;社交账号
-		</div>
-		<div class="socialAccounts">
-			
-				<div class="account">
-					<i class="fas fa-qq" aria-hidden="true"></i> QQ：<a href="tencent://message/?uin=1462676302&Site=&Menu=yes">1462676302</a> 
-				</div>
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;游戏
-		</div>
-		<div class="games">
-			
-		</div>
-	</div>
-	
-	
-	<div class="basic-info reveal">
-		<div class="subtitle">
-			<i class="fas fa-book" aria-hidden="true"></i>&nbsp;&nbsp;书籍
-		</div>
-		<div class="books">
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://tse2-mm.cn.bing.net/th/id/OIP-C.O1a09AQrH86bVcbKAf8V1gHaHa?w=211&h=211&c=7&r=0&o=5&dpr=1.65&pid=1.7" class="lazyload placeholder" data-srcset="https://tse2-mm.cn.bing.net/th/id/OIP-C.O1a09AQrH86bVcbKAf8V1gHaHa?w=211&h=211&c=7&r=0&o=5&dpr=1.65&pid=1.7" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						被讨厌的勇气
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="http://t14.baidu.com/it/u=1490373061,2036287326&fm=224&app=112&f=JPEG?w=427&h=500&s=882A5D325917664D50C151DA000010B2" class="lazyload placeholder" data-srcset="http://t14.baidu.com/it/u=1490373061,2036287326&fm=224&app=112&f=JPEG?w=427&h=500&s=882A5D325917664D50C151DA000010B2" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						当呼吸化为空气
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Faa86f43faf58e97e225878807bcdf01ae78b18b586f1-XNAiMs_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641886972&t=e7407adda6728880b121f140097ecc4b" class="lazyload placeholder" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Faa86f43faf58e97e225878807bcdf01ae78b18b586f1-XNAiMs_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641886972&t=e7407adda6728880b121f140097ecc4b" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						偷影子的人
-					</div>
-				</div>
-			
-				<div class="book-item">
-					<div class="logo">
-						<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2018%2F11%2F15%2FFhXoOX-mxj8U5nQz5hAitXt6QJU0.png%3FimageView2%2F2%2Fw%2F580%2Fh%2F580%2Fq%2F75%2Fformat%2Fpng&refer=http%3A%2F%2Fimg.yzcdn.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641887075&t=3146aa0903f3bda4ea8366b1b70786ef" class="lazyload placeholder" data-srcset="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.yzcdn.cn%2Fupload_files%2F2018%2F11%2F15%2FFhXoOX-mxj8U5nQz5hAitXt6QJU0.png%3FimageView2%2F2%2Fw%2F580%2Fh%2F580%2Fq%2F75%2Fformat%2Fpng&refer=http%3A%2F%2Fimg.yzcdn.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1641887075&t=3146aa0903f3bda4ea8366b1b70786ef" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
-					</div>
-					<div class="name">
-						沟通的艺术
-					</div>
-				</div>
-			
-		</div>
-	</div>
-	
+            </div>
+            <div class="post-categories">
+              <!-- 文章详情页的分类 -->
+
+<div class="article-category">
+  <i class="iconfont iconbookmark1"></i>
+  <a class="article-category-link" href="/categories/ES6%E5%AD%A6%E4%B9%A0/">ES6学习</a>
 </div>
+
+
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="/2021/12/30/babel-zhuan-ma-qi/" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload lazyload placeholder" src="/medias/post3.jpg" class="lazyload placeholder" data-srcset="/medias/post3.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            -
+Babel 转码器
+Babel 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在老版本的浏览器执行。
+
+下面的原始代码用了箭头函数，Babel 将其转为普通函数，就能在不支持箭头函数的 JavaScrip
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="/2021/12/30/babel-zhuan-ma-qi/">
+            <i class="iconfont iconmore" pointer style="float: right;  " title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="/2021/12/30/babel-zhuan-ma-qi/" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload lazyload placeholder" src="/medias/post3.jpg" class="lazyload placeholder" data-srcset="/medias/post3.jpg" srcset="https://www.duitang.com/blog/?id=1350901864" alt="">
+        </a>
+      </div>
+    </article>
+  
+</section>
+</div>
+<div class="w-70">
+  
+</div>
+
       </main>
     </div>
 
